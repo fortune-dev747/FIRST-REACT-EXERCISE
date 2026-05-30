@@ -56,8 +56,11 @@
         console.log(currentTime);
 
        // Exercise 6
+      const header = (
+        <h1>Current Time: {currentTime}</h1>
+      );
       const container = document.querySelector('.js-container');
-      ReactDOM.createRoot(container).render(paragraph);
+      ReactDOM.createRoot(container).render(header);
     </script>
   </body>
 </html>
