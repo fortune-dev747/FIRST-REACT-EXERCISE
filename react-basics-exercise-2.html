@@ -87,13 +87,53 @@
       // }
 
       // exercise 2e
+      // function App() {
+      //   return (
+      //     <>
+      //       <div>
+      //         <p>Cotton Socks</p>
+      //         <p>Price: $10.90</p>
+      //         <button>Add to Cart</button>
+      //       </div> 
+      //     </>
+      //   );
+      // }
+
+      // exercise 2f
       function App() {
         return (
           <>
+            <ProductDetails item="Tennis Balls"/>
+            <ProductDetails item="Cotton Socks"/>
+            <ProductDetails item="Plain T-Shirt"/>
+          </>
+        );
+      }
+      function ProductDetails( {item} ) {
+        return (
+          <>
             <div>
-              <p>Cotton Socks</p>
-              <p>Price: $10.90</p>
-              <button>Add to Cart</button>
+             {item === 'Tennis Balls' && (
+              <div>
+                <p>Tennis balls</p>
+                <p>Price: $6.00</p>
+                <button>Add to Cart</button>
+              </div>
+             )}
+             {item === 'Cotton Socks' && (
+              <div>
+                <p>Cotton Socks</p>
+                <p>Price: $10.90</p>
+                <button>Add to Cart</button>
+              </div>
+             )}
+             {item === 'Plain T-Shirt' && (
+              <div>
+                <p>Plain T-Shirt</p>
+                <p>Price: $7.99</p>
+                <button>Add to Cart</button>
+              </div>
+             )}
             </div> 
           </>
         );
