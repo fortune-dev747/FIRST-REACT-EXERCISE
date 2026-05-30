@@ -100,16 +100,56 @@
       // }
 
       // exercise 2f
+      // function App() {
+      //   return (
+      //     <>
+      //       <ProductDetails item="Tennis Balls"/>
+      //       <ProductDetails item="Cotton Socks"/>
+      //       <ProductDetails item="Plain T-Shirt"/>
+      //     </>
+      //   );
+      // }
+      // function ProductDetails( {item} ) {
+      //   return (
+      //     <>
+      //       <div>
+      //        {item === 'Tennis Balls' && (
+      //         <div>
+      //           <p>Tennis balls</p>
+      //           <p>Price: $6.00</p>
+      //           <button>Add to Cart</button>
+      //         </div>
+      //        )}
+      //        {item === 'Cotton Socks' && (
+      //         <div>
+      //           <p>Cotton Socks</p>
+      //           <p>Price: $10.90</p>
+      //           <button>Add to Cart</button>
+      //         </div>
+      //        )}
+      //        {item === 'Plain T-Shirt' && (
+      //         <div>
+      //           <p>Plain T-Shirt</p>
+      //           <p>Price: $7.99</p>
+      //           <button>Add to Cart</button>
+      //         </div>
+      //        )}
+      //       </div> 
+      //     </>
+      //   );
+      // }
+
+      // Exercise 2g
       function App() {
         return (
           <>
             <ProductDetails item="Tennis Balls"/>
-            <ProductDetails item="Cotton Socks"/>
+            <ProductDetails item="Cotton Socks" discount="Discount price: $5.45"/>
             <ProductDetails item="Plain T-Shirt"/>
           </>
         );
       }
-      function ProductDetails( {item} ) {
+      function ProductDetails( {item, discount} ) {
         return (
           <>
             <div>
@@ -124,6 +164,7 @@
               <div>
                 <p>Cotton Socks</p>
                 <p>Price: $10.90</p>
+                <p>{discount}</p>
                 <button>Add to Cart</button>
               </div>
              )}
