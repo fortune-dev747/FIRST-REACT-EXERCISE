@@ -34,10 +34,40 @@
       // } 
 
       // Exercise 2c
+      // function App() {
+      //   return (
+      //     <>
+      //       <p>Hello, Welcome to my Website</p>
+      //       <div>
+      //         <input 
+      //           type="email" 
+      //           placeholder="Email" 
+      //         />
+      //       </div>
+      //       <div>
+      //         <input 
+      //           type="password" 
+      //           placeholder="Password" 
+      //         />
+      //       </div>
+      //       <button>Login</button>
+      //       <button>Sign Up</button>
+      //     </>
+      //   );
+      // } 
+
+      // Exercise 2d
       function App() {
         return (
           <>
             <p>Hello, Welcome to my Website</p>
+            <LoginFOrm />  
+          </>
+        );
+      }
+      function LoginFOrm() {
+        return (
+          <>
             <div>
               <input 
                 type="email" 
@@ -54,7 +84,7 @@
             <button>Sign Up</button>
           </>
         );
-      } 
+      }
       const container = document.querySelector('.js-container');
       ReactDOM.createRoot(container).render(<App />);
 
