@@ -142,6 +142,41 @@
       // }
 
       // Exercise 2h
+      // function App() {
+      //   return (
+      //     <>
+      //       <ProductDetails item="Tennis Balls" 
+      //        price="6.00"
+      //       />
+      //       <ProductDetails item="Cotton Socks" 
+      //        price="10.90" 
+      //        discountPrice="5.45"
+      //       />
+      //       <ProductDetails item="Plain T-Shirt" 
+      //        price="7.99"
+      //       />
+      //     </>
+      //   );
+      // }
+      // function ProductDetails( {item, price, discountPrice} ) {
+      //   return (
+      //     <>
+      //       <p>{item}</p>
+      //       {!discountPrice && (
+      //         <p>Price : ${price}</p>
+      //       )}
+      //       {discountPrice && (
+      //         <p><del>Price: ${price}</del></p>
+      //       )}
+      //       {discountPrice && (
+      //         <p>Discount Price: ${discountPrice}</p>
+      //       )}
+      //       <button>Add to Cart</button>
+      //     </>
+      //   );
+      // }
+
+      // Exercise 2i
       function App() {
         return (
           <>
@@ -162,14 +197,13 @@
         return (
           <>
             <p>{item}</p>
-            {!discountPrice && (
-              <p>Price : ${price}</p>
-            )}
-            {discountPrice && (
-              <p><del>Price: ${price}</del></p>
-            )}
-            {discountPrice && (
-              <p>Discount Price: ${discountPrice}</p>
+            {discountPrice ? (
+              <>
+                <p><del>Price: ${price}</del></p>
+                <p>Discount Price: ${discountPrice}</p>
+              </>
+            ) : (
+              <p>Price: ${price}</p>
             )}
             <button>Add to Cart</button>
           </>
