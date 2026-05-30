@@ -12,7 +12,7 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
     <script type="text/babel">
-        // Exercise 1
+        // Exercise 1a
       // const div = (
       //   <div>
       //     <h1>Cotton Socks</h1>
@@ -20,16 +20,21 @@
       //     <button>Add to Cart</button>
       //  </div>
       // );
-        // Exercise 2
+        // Exercise 1b
       const price = [10, 8, 8];
       const productCost = price.reduce(sum);
       const shippingCost = 5;
       const totalCost = total();
 
-    //   console.log(productCost);
+      // Exercise 1c
+      console.log(productCost);
+
+      // Exercise 1d
       function sum(accumulator, element) {
         return accumulator + element;
       }
+
+      // Exercise 1e
       function total() {
         return productCost + shippingCost;
       }
@@ -42,33 +47,32 @@
        </div>
      );
     
-       // Exercise 3
+        // Exercise 1f
       const date =  dayjs().format('MMMM D');
       console.log(date);
 
-        // Exercise 4
+        // Exercise 1g
       const paragraph = (
         <p>Today is {date}</p>
       );
 
-        // Exercise 5
+        // Exercise 1h
         const currentTime = dayjs().format('HH:mm:ss');
         console.log(currentTime);
 
-       // Exercise 6
+       // Exercise 1i
       const header = <h1>Current Time: {currentTime}</h1>
     
     //   const container = document.querySelector('.js-container');
     //   ReactDOM.createRoot(container).render(header);
 
-      // Exercise 7
+      // Exercise 1j
       const container = document.querySelector('.js-container');
 
       const root = ReactDOM.createRoot(container);
       root.render(header);
 
       setInterval(() => {
-        const header = <h1>Current Time: {currentTime}</h1>
         root.render(header);
       }, 1000);
     </script>
