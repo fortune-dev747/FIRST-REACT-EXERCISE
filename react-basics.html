@@ -43,11 +43,14 @@
      );
     
        // Exercise 3
-      const date =  dayjs().format('MMMM-D');
+      const date =  dayjs().format('MMMM D');
       console.log(date);
-  
+
+      const paragraph = (
+        <p>Today is {date}</p>
+      );
       const container = document.querySelector('.js-container');
-      ReactDOM.createRoot(container).render(div);
+      ReactDOM.createRoot(container).render(paragraph);
     </script>
   </body>
 </html>
