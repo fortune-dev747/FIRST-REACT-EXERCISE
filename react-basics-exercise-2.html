@@ -14,13 +14,24 @@
     <script type="text/babel">
 
       // Exercise 2a
+      // function App() {
+      //   return (
+      //     <>
+      //       <p>Hello, Welcome to my Website</p>
+      //     </>
+      //   );
+      // }  
+
+      // Exercise 2b
       function App() {
         return (
           <>
             <p>Hello, Welcome to my Website</p>
+            <button>Login</button>
+            <button>Sign Up</button>
           </>
         );
-      }  
+      } 
       const container = document.querySelector('.js-container');
       ReactDOM.createRoot(container).render(<App />);
 
