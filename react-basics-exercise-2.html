@@ -177,26 +177,64 @@
       // }
 
       // Exercise 2i
+      // function App() {
+      //   return (
+      //     <>
+      //       <ProductDetails item="Tennis Balls" 
+      //        price="6.00"
+      //       />
+      //       <ProductDetails item="Cotton Socks" 
+      //        price="10.90" 
+      //        discountPrice="5.45"
+      //       />
+      //       <ProductDetails item="Plain T-Shirt" 
+      //        price="7.99"
+      //       />
+      //     </>
+      //   );
+      // }
+      // function ProductDetails( {item, price, discountPrice} ) {
+      //   return (
+      //     <>
+      //     // if-else statement
+      //       <p>{item}</p>
+      //       {discountPrice ? (
+      //         <>
+      //           <p><del>Price: ${price}</del></p>
+      //           <p>Discount Price: ${discountPrice}</p>
+      //         </>
+      //       ) : (
+      //         <p>Price: ${price}</p>
+      //       )}
+      //       <button>Add to Cart</button>
+      //     </>
+      //   );
+      // }
+
+      // Exercise 2j
       function App() {
         return (
           <>
             <ProductDetails item="Tennis Balls" 
              price="6.00"
+             imageSrc= "tennis-balls.webp"
             />
             <ProductDetails item="Cotton Socks" 
              price="10.90" 
              discountPrice="5.45"
+             imageSrc= "cotton-socks.webp"
             />
             <ProductDetails item="Plain T-Shirt" 
              price="7.99"
+             imageSrc= "plain-t-shirt.png"
             />
           </>
         );
       }
-      function ProductDetails( {item, price, discountPrice} ) {
+      function ProductDetails( {item, price, discountPrice, imageSrc} ) {
         return (
-          <>
-          // if-else statement
+          <div>
+          <img src={imageSrc} width= "150"/>
             <p>{item}</p>
             {discountPrice ? (
               <>
@@ -207,7 +245,7 @@
               <p>Price: ${price}</p>
             )}
             <button>Add to Cart</button>
-          </>
+          </div>
         );
       }
       const container = document.querySelector('.js-container');
