@@ -56,11 +56,21 @@
         console.log(currentTime);
 
        // Exercise 6
-      const header = (
-        <h1>Current Time: {currentTime}</h1>
-      );
+      const header = <h1>Current Time: {currentTime}</h1>
+    
+    //   const container = document.querySelector('.js-container');
+    //   ReactDOM.createRoot(container).render(header);
+
+      // Exercise 7
       const container = document.querySelector('.js-container');
-      ReactDOM.createRoot(container).render(header);
+
+      const root = ReactDOM.createRoot(container);
+      root.render(header);
+
+      setInterval(() => {
+        const header = <h1>Current Time: {currentTime}</h1>
+        root.render(header);
+      }, 1000);
     </script>
   </body>
 </html>
