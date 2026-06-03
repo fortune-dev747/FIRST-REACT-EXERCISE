@@ -12,17 +12,31 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
     <script type="text/babel">
-    // Exercise 3a
-
-      function clicked() {
-        console.log('clicked');
-      }
+    //  // Exercise 3a
+    //   function clicked() {
+    //     console.log('clicked');
+    //   }
      
-        const button = 
-        <button onClick={clicked}>Clicked 0 times</button>
+    //   const button = 
+    //   <button onClick={clicked}>Clicked 0 times</button>
 
-       const container = document.querySelector('.js-container');
-       ReactDOM.createRoot(container).render(button);
+    // Exercise 3b
+      function App() {
+        const [count, setCount] = React.useState(0);
+        function clicked() {
+          setCount(count + 1);
+        }
+        return (
+          <button onClick={clicked}>Clicked {count} times</button>
+        );
+      }
+      
+
+
+
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
     
     </script>
   </body>
