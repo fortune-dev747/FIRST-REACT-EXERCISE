@@ -109,46 +109,62 @@
       // }
 
       // Exercise 3f
-      function PrimaryButton( {count, setCount} ) {
-        function clicked() {
-          setCount(count + 1);
-        }
-        return (
-          <>
-           {count === 1 ? <button onClick={clicked}>Clicked {count} time</button> : <button onClick={clicked}>Clicked {count} times</button>}
-           </>
-        );
-      }
-      function SecondaryButton( {count, setCount} ) {
-        function clicked() {
-          setCount(count + 1);
-        }
-        return (
-          <>
-            {count === 1 ? <button onClick={clicked}>Clicked {count} time</button> : <button onClick={clicked}>Clicked {count} times</button>}
-          </>
-        );
-      }
+      // function PrimaryButton( {count, setCount} ) {
+      //   function clicked() {
+      //     setCount(count + 1);
+      //   }
+      //   return (
+      //     <>
+      //      {count === 1 ? <button onClick={clicked}>Clicked {count} time</button> : <button onClick={clicked}>Clicked {count} times</button>}
+      //      </>
+      //   );
+      // }
+      // function SecondaryButton( {count, setCount} ) {
+      //   function clicked() {
+      //     setCount(count + 1);
+      //   }
+      //   return (
+      //     <>
+      //       {count === 1 ? <button onClick={clicked}>Clicked {count} time</button> : <button onClick={clicked}>Clicked {count} times</button>}
+      //     </>
+      //   );
+      // }
 
-      function ResetButton( {setCount} ) {
-        function clicked() {
-          setCount(0);
+      // function ResetButton( {setCount} ) {
+      //   function clicked() {
+      //     setCount(0);
+      //   }
+      //   return (
+      //     <>
+      //       <button onClick={clicked}>Reset</button>
+      //     </>
+      //   );
+      // }
+
+      // function App( ) {
+      //   const [count, setCount] = React.useState(0);
+      //   return (
+      //     <>
+      //      <PrimaryButton count={count} setCount={setCount} />
+      //      <SecondaryButton count={count} setCount={setCount} />
+      //       <ResetButton setCount={setCount} />
+      //    </>
+      //   );
+      // }
+
+      // Exercise 3g
+      function App() {
+        const [text, setText] = React.useState('');
+        function handleChange(event) {
+          setText(event.target.value);
         }
         return (
-          <>
-            <button onClick={clicked}>Reset</button>
-          </>
-        );
-      }
-
-      function App( ) {
-        const [count, setCount] = React.useState(0);
-        return (
-          <>
-           <PrimaryButton count={count} setCount={setCount} />
-           <SecondaryButton count={count} setCount={setCount} />
-            <ResetButton setCount={setCount} />
-         </>
+        <>
+          <input type="text" placeholder="Type something..." 
+           value={text} onChange={handleChange}
+          />
+          <p>{text}</p>
+        </>
         );
       }
 
