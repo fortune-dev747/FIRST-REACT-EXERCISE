@@ -507,7 +507,148 @@
 
 
       // Exercise 3k
-       function ChatInput({ chatMessages, setChatMessages }) {
+      // added an async / await to the sendMessage function in the ChatInput component. This allows the function to wait for the chatbot's response before updating the chat messages state with the user's message and the chatbot's response.
+      //  function ChatInput({ chatMessages, setChatMessages }) {
+      //   const [inputText, setInputText] = React.useState('');
+      //   function saveInputText(event) {
+      //     setInputText(event.target.value);
+      //   }
+
+      //   async function sendMessage() {
+      //     const newChatMessages = [
+      //       ...chatMessages,
+      //       {
+      //         message: inputText,
+      //         sender: 'user',
+      //         id: crypto.randomUUID()
+      //       }
+      //     ];
+
+      //     setChatMessages(newChatMessages);
+
+      //     const response = await Chatbot.getResponse(inputText);
+      //     setChatMessages([
+      //       ...newChatMessages,
+      //       {
+      //         message: response,
+      //         sender: 'robot',
+      //         id: crypto.randomUUID()
+      //       }
+      //     ]);
+
+      //     setInputText('');
+      //   }
+
+      //   return (
+      //     <>
+      //       <input 
+      //        placeholder= "Send a message to Chatbot"
+      //        size= "30" 
+      //        onChange={saveInputText}
+      //        value={inputText}  //=> controlled input
+      //        //  onKeyDown => new event prop 
+      //        onKeyDown={(event) => {
+      //          (event.key === 'Enter') && sendMessage();
+      //          (event.key === 'Escape') && setInputText('');
+      //         }
+      //        }
+      //       />
+      //       <button
+      //        onClick={sendMessage}
+      //       >Send</button>
+      //     </>
+      //   );
+      // }
+
+      // function ChatMessage({ message, sender }) {
+      //   // const message = props.message;
+      //   // const sender = props.sender;
+      //   // // shortcut
+      //   // const { message, sender } = props;
+
+      //   /*
+      //   if (sender === 'robot') {
+      //     return (
+      //       <div>
+      //         <img src= "robot.png" width= "50"/>
+      //         {message}
+              
+      //       </div>
+      //     );
+      //   }
+      //   */
+
+
+      //   return (
+      //     <div>
+      //       {sender === 'robot' && (
+      //         <img src= "robot.png" width= "50"/>
+      //       )}
+      //       {message}
+      //       {sender === 'user' && (
+      //         <img src= "user.png" width= "50"/>
+      //       )}
+      //     </div>
+      //   );
+      // }
+      
+      // function ChatMessages({ chatMessages }) {
+
+      //   return (
+      //     <>
+      //       {chatMessages.map((chatMessage) => {
+      //         return (
+      //           <ChatMessage 
+      //             message={chatMessage.message}
+      //             sender={chatMessage.sender} 
+      //             key={chatMessage.id}
+      //           />
+      //         );
+      //       })}
+      //     </>
+      //   );
+      // }
+
+      // function App() {
+      //   const [chatMessages, setChatMessages] = React.useState([{
+      //     message: 'hello chatbot',
+      //     sender: 'user',
+      //     id: 'id1'
+      //   }, {
+      //     message: 'Hello! How can I help you?',
+      //     sender: 'robot',
+      //     id: 'id2'
+      //   }, {
+      //     message: 'what is the date',
+      //     sender: 'user',
+      //     id: 'id3'
+      //   }, {
+      //     message: 'Today is May 30',
+      //     sender: 'robot',
+      //     id: 'id4'
+      //   }]);
+      //  //const [chatMessages, setChatMessages] = array;
+      //  /*shortcut(we used array destructuring above instead of this two lines of code) =>const chatMessages = array[0];
+      //  const setChatMessages = array[1];
+      //  */
+
+      //   return (
+      //     <>
+      //       <ChatInput 
+      //        chatMessages={chatMessages}
+      //        setChatMessages={setChatMessages}
+      //       />
+      //       <ChatMessages 
+      //        chatMessages={chatMessages}
+      //       />
+      //     </>
+      //   );
+      // }
+
+
+      // Exercise 3l
+      // show loading message in the input field after sending the message
+      function ChatInput({ chatMessages, setChatMessages }) {
         const [inputText, setInputText] = React.useState('');
         function saveInputText(event) {
           setInputText(event.target.value);
@@ -524,6 +665,7 @@
           ];
 
           setChatMessages(newChatMessages);
+          setInputText('Loading...');
 
           const response = await Chatbot.getResponse(inputText);
           setChatMessages([
