@@ -647,6 +647,7 @@
 
 
       // Exercise 3l
+      // Added a temporary "Loading..." message to the chat messages state while waiting for the chatbot's response. This is done by updating the chat messages state with the user's message and a "Loading..." message before awaiting the chatbot's response. Once the response is received, the chat messages state is updated again to replace the "Loading..." message with the actual response from the chatbot.
       function ChatInput({ chatMessages, setChatMessages }) {
         const [inputText, setInputText] = React.useState('');
 
@@ -797,6 +798,8 @@
           </>
         );
       }
+
+      // Exercise 3m
 
       const container = document.querySelector('.js-container');
       ReactDOM.createRoot(container).render(<App />);
