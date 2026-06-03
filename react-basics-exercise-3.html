@@ -186,8 +186,12 @@
            value={text} 
            onChange={handleChange}
           />
-          <ResetButton setText={setText} />
-          <Example setText={setText} />
+          <ResetButton 
+           setText={setText} 
+          />
+          <Example 
+           setText={setText}
+          />
           <p>{text}</p>
         </>
         );
@@ -199,7 +203,10 @@
         }
         return (
           <>
-            <button onClick={clicked}>Reset</button>
+            <button 
+             onClick={clicked}
+             >Reset
+            </button>
           </>
         );
       }
@@ -210,7 +217,10 @@
         }
         return (
           <>
-            <button onClick={clicked}>Example</button>
+            <button 
+             onClick={clicked}
+             >Example
+            </button>
           </>
         );
       }
