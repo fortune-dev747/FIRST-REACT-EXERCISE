@@ -21,17 +21,31 @@
     //   <button onClick={clicked}>Clicked 0 times</button>
 
     // Exercise 3b
-      function App() {
+      // function App() {
+      //   const [count, setCount] = React.useState(0);
+      //   function clicked() {
+      //     setCount(count + 1);
+      //   }
+      //   return (
+      //     <button onClick={clicked}>Clicked {count} times</button>
+      //   );
+      // }
+      
+      // Exercise 3c
+       function App() {
         const [count, setCount] = React.useState(0);
         function clicked() {
           setCount(count + 1);
         }
         return (
-          <button onClick={clicked}>Clicked {count} times</button>
+          <>
+            {count === 1 ? <button onClick={clicked}>Clicked {count} time</button> : <button onClick={clicked}>Clicked {count} times</button>}
+          </>
         );
-      }
       
+        
 
+      }
 
 
 
