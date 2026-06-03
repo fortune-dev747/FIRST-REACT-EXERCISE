@@ -800,6 +800,7 @@
       // }
 
       // Exercise 3m
+      // added a loading state to the ChatInput component to prevent multiple messages from being sent while waiting for the chatbot's response. The isLoading state is set to true when a message is sent and set back to false after the response is received. The sendMessage function checks the isLoading state before sending a message, and if it is true, it returns early to prevent sending another message until the current one is processed.
       function ChatInput({ chatMessages, setChatMessages }) {
         const [inputText, setInputText] = React.useState('');
         const [isLoading, setIsLoading] = React.useState(false);
