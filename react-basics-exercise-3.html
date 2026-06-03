@@ -153,6 +153,26 @@
       // }
 
       // Exercise 3g
+      // function App() {
+      //   const [text, setText] = React.useState('');
+      //   function handleChange(event) {
+      //     setText(event.target.value);
+      //   }
+      //   return (
+      //   <>
+      //     <input 
+      //      type="text" 
+      //      placeholder="Type something..." 
+      //      value={text} 
+      //      onChange={handleChange}
+      //     />
+      //     <p>{text}</p>
+      //   </>
+      //   );
+      // }
+
+      // Exercise 3h
+      // Controlled input with reset and example buttons.
       function App() {
         const [text, setText] = React.useState('');
         function handleChange(event) {
@@ -166,8 +186,32 @@
            value={text} 
            onChange={handleChange}
           />
+          <ResetButton setText={setText} />
+          <Example setText={setText} />
           <p>{text}</p>
         </>
+        );
+      }
+
+      function ResetButton( {setText} ) {
+        function clicked() {
+          setText('');
+        }
+        return (
+          <>
+            <button onClick={clicked}>Reset</button>
+          </>
+        );
+      }
+
+      function Example( {setText} ) {
+        function clicked() {
+          setText('Gracie');
+        }
+        return (
+          <>
+            <button onClick={clicked}>Example</button>
+          </>
         );
       }
 
