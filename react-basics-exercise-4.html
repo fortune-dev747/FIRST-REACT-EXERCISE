@@ -59,7 +59,7 @@
         margin-bottom: 10px;
       } */
      /* Exercise 4e */
-      .login-button {
+      /* .login-button {
         background-color: rgb(0, 123, 255);
         color: white;
         border: none;
@@ -89,7 +89,7 @@
         border: 2px solid #ccc;
         border-radius: 5px;
         margin-bottom: 10px;
-      }
+      } */
 
     </style>
   </head>
@@ -201,52 +201,68 @@
       // }
 
       // Exercise 4e
-        function App() {
+      //   function App() {
+      //   return (
+      //     <>
+      //       <p>Hello, Welcome to my website</p>
+      //       <LoginFOrm />  
+      //     </>
+      //   );
+      // }
+      // function LoginFOrm() {
+      //   const [showPassword, setShowPassword] = React.useState(false);
+
+      //   function toggleShowPassword() {
+      //     setShowPassword(!showPassword);
+      //   }
+      //   return (
+      //     <>
+      //       <div>
+      //         <input 
+      //          className="email-input"
+      //           type="email" 
+      //           placeholder="Email" 
+      //         />
+      //       </div>
+      //       <div>
+      //         <input 
+      //          className="password-input"
+      //           type={showPassword ? "text" : "password"}
+      //           placeholder="Password"
+      //         />
+      //         <button 
+      //          onClick={toggleShowPassword}
+      //          >{showPassword ? "Hide" : "Show"}
+      //         </button>
+      //       </div>
+      //       <button 
+      //        className="login-button">
+      //        Login
+      //       </button>
+      //       <button 
+      //         className="signup-button">
+      //         Sign Up
+      //       </button>
+      //     </>
+      //   );
+      // }
+
+      // Exercise 4f
+      function App() {
+        const [time, setTime] = React.useState(dayjs().format('HH:mm:ss'));
+
+        React.useEffect(() => {
+          const interval = setInterval(() => {
+            setTime(dayjs().format('HH:mm:ss'));
+          }, 1000);
+        }, [time]);
+
         return (
           <>
-            <p>Hello, Welcome to my website</p>
-            <LoginFOrm />  
+            <p>Current time: {time}</p>
           </>
         );
       }
-      function LoginFOrm() {
-        const [showPassword, setShowPassword] = React.useState(false);
-
-        function toggleShowPassword() {
-          setShowPassword(!showPassword);
-        }
-        return (
-          <>
-            <div>
-              <input 
-               className="email-input"
-                type="email" 
-                placeholder="Email" 
-              />
-            </div>
-            <div>
-              <input 
-               className="password-input"
-                type={showPassword ? "text" : "password"}
-                placeholder="Password"
-              />
-              <button 
-               onClick={toggleShowPassword}
-               >{showPassword ? "Hide" : "Show"}
-              </button>
-            </div>
-            <button 
-             className="login-button">
-             Login
-            </button>
-            <button 
-              className="signup-button">
-              Sign Up
-            </button>
-          </>
-        );
-      }
-
 
       const container = document.querySelector('.js-container');
       ReactDOM.createRoot(container).render(<App />);
