@@ -5,6 +5,7 @@
     <style>
       body {
         font-family: Arial, sans-serif;
+        margin: 0;
       }
       /* Exercise 4a */
       /* .on-button {
@@ -91,6 +92,22 @@
         margin-bottom: 10px;
       } */
 
+      /* Exercise 4i */
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: rgb(222, 222, 222);
+      }
+      button {
+        background-color: rgb(25, 135, 84);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-right: 5px;
+      }
     </style>
   </head>
   <body>
@@ -283,7 +300,44 @@
       // }
 
       // Exercise 4h
-       function App() {
+      //  function App() {
+      //   const [count, setCount] = React.useState(0);
+      //   const buttonRef = React.useRef();
+      //   function increaseCount() {
+      //     setCount(count + 1);
+      //   }
+      //   function reSet() {
+      //     setCount(0);
+      //   }
+      //   function autoClick() {
+      //     setInterval(() => {
+      //       const buttonElement = buttonRef.current;
+      //       if (buttonElement) {
+      //         buttonElement.click();
+      //       }
+      //     }, 1000);
+      //   }
+      //   return (
+      //     <>
+      //       <button 
+      //        onClick={increaseCount} 
+      //        ref={buttonRef}>
+      //        Clicked {count} {count === 1 ? 'time' : 'times'}
+      //       </button>
+      //       <button 
+      //        onClick={reSet}>
+      //         Reset
+      //       </button>
+      //       <button 
+      //        onClick={autoClick}>
+      //        Auto Click
+      //       </button>
+      //     </>
+      //   );
+      // }
+
+      // Exercise 4i
+      function App() {
         const [count, setCount] = React.useState(0);
         const buttonRef = React.useRef();
         function increaseCount() {
@@ -301,7 +355,7 @@
           }, 1000);
         }
         return (
-          <>
+          <div className="container">
             <button 
              onClick={increaseCount} 
              ref={buttonRef}>
@@ -315,7 +369,7 @@
              onClick={autoClick}>
              Auto Click
             </button>
-          </>
+          </div>
         );
       }
 
