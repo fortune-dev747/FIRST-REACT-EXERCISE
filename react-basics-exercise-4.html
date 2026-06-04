@@ -248,6 +248,23 @@
       // }
 
       // Exercise 4f
+      // function App() {
+      //   const [time, setTime] = React.useState(dayjs().format('HH:mm:ss'));
+
+      //   React.useEffect(() => {
+      //     setInterval(() => {
+      //       setTime(dayjs().format('HH:mm:ss'));
+      //     }, 1000);
+      //   }, []);
+
+      //   return (
+      //     <>
+      //       <p>Current time: {time}</p>
+      //     </>
+      //   );
+      // }
+
+      // Exercise 4g
       function App() {
         const [time, setTime] = React.useState(dayjs().format('HH:mm:ss'));
 
@@ -255,7 +272,8 @@
           setInterval(() => {
             setTime(dayjs().format('HH:mm:ss'));
           }, 1000);
-        }, []);
+          console.log('run code');
+        }, );
 
         return (
           <>
