@@ -302,9 +302,19 @@
         }
         return (
           <>
-            <button onClick={increaseCount} ref={buttonRef}>Clicked {count} {count === 1 ? 'time' : 'times'}</button>
-            <button onClick={reSet}>Reset</button>
-            <button onClick={autoClick}>Auto Click</button>
+            <button 
+             onClick={increaseCount} 
+             ref={buttonRef}>
+             Clicked {count} {count === 1 ? 'time' : 'times'}
+            </button>
+            <button 
+             onClick={reSet}>
+              Reset
+            </button>
+            <button 
+             onClick={autoClick}>
+             Auto Click
+            </button>
           </>
         );
       }
