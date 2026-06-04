@@ -38,7 +38,7 @@
           border-radius: 5px;
         } */
       /* Exercise 4d */
-      button {
+      /* button {
         background-color: rgb(0, 123, 255);
         color: white;
         border: none;
@@ -57,7 +57,40 @@
         border: 2px solid #ccc;
         border-radius: 5px;
         margin-bottom: 10px;
+      } */
+     /* Exercise 4e */
+      .login-button {
+        background-color: rgb(0, 123, 255);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-left: 5px;
       }
+      .signup-button {
+        background-color: rgb(0, 123, 255);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-left: 5px;
+      }
+      button {
+        margin-left: 5px;
+      }
+      .email-input {
+        padding: 5px 10px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+      .password-input {
+        padding: 5px 10px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+
     </style>
   </head>
   <body>
@@ -136,7 +169,39 @@
       // }
 
       // Exercise 4d
-      function App() {
+      // function App() {
+      //   return (
+      //     <>
+      //       <p>Hello, Welcome to my website</p>
+      //       <LoginFOrm />  
+      //     </>
+      //   );
+      // }
+      // function LoginFOrm() {
+      //   return (
+      //     <>
+      //       <div>
+      //         <input 
+      //          className="email-input"
+      //           type="email" 
+      //           placeholder="Email" 
+      //         />
+      //       </div>
+      //       <div>
+      //         <input 
+      //          className="password-input"
+      //           type="password" 
+      //           placeholder="Password" 
+      //         />
+      //       </div>
+      //       <button>Login</button>
+      //       <button>Sign Up</button>
+      //     </>
+      //   );
+      // }
+
+      // Exercise 4e
+        function App() {
         return (
           <>
             <p>Hello, Welcome to my website</p>
@@ -145,6 +210,11 @@
         );
       }
       function LoginFOrm() {
+        const [showPassword, setShowPassword] = React.useState(false);
+
+        function toggleShowPassword() {
+          setShowPassword(!showPassword);
+        }
         return (
           <>
             <div>
@@ -157,15 +227,18 @@
             <div>
               <input 
                className="password-input"
-                type="password" 
-                placeholder="Password" 
+                type={showPassword ? "text" : "password"}
+                placeholder="Password"
               />
+              <button onClick={toggleShowPassword}
+              >{showPassword ? "Hide" : "Show"}</button>
             </div>
-            <button>Login</button>
-            <button>Sign Up</button>
+            <button className="login-button">Login</button>
+            <button className="signup-button">Sign Up</button>
           </>
         );
       }
+
 
       const container = document.querySelector('.js-container');
       ReactDOM.createRoot(container).render(<App />);
