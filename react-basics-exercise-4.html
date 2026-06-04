@@ -99,11 +99,13 @@
 
         return (
           <>
-            {isButtonOn ? <button 
+            {isButtonOn 
+            ? <button 
              onClick={switchButton} 
              className="on-button"
              >ON
-            </button> : <button 
+            </button> 
+            : <button 
              onClick={switchButton} 
              className="off-button"
              >OFF
