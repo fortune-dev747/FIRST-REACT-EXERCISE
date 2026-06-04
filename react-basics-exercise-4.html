@@ -2,6 +2,19 @@
 <html>
   <head>
     <title>React Basics</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      /* Exercise 4a */
+      .on-button {
+        background-color: rgb(23, 135, 84);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+      }
+    </style>
   </head>
   <body>
     <div class="js-container"></div>
@@ -14,7 +27,15 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
     <script type="text/babel">
-  
+      
+      // Exercise 4a
+      function App() {
+        return (
+          <>
+            <button className="on-button">ON</button>
+          </>
+        );
+      }
 
       const container = document.querySelector('.js-container');
       ReactDOM.createRoot(container).render(<App />);
