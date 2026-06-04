@@ -265,19 +265,46 @@
       // }
 
       // Exercise 4g
-      function App() {
-        const [time, setTime] = React.useState(dayjs().format('HH:mm:ss'));
+      // function App() {
+      //   const [time, setTime] = React.useState(dayjs().format('HH:mm:ss'));
 
-        React.useEffect(() => {
+      //   React.useEffect(() => {
+      //     setInterval(() => {
+      //       setTime(dayjs().format('HH:mm:ss'));
+      //     }, 1000);
+      //     console.log('run code');
+      //   }, );
+
+      //   return (
+      //     <>
+      //       <p>Current time: {time}</p>
+      //     </>
+      //   );
+      // }
+
+      // Exercise 4h
+       function App() {
+        const [count, setCount] = React.useState(0);
+        const buttonRef = React.useRef();
+        function increaseCount() {
+          setCount(count + 1);
+        }
+        function reSet() {
+          setCount(0);
+        }
+        function autoClick() {
           setInterval(() => {
-            setTime(dayjs().format('HH:mm:ss'));
+            const buttonElement = buttonRef.current;
+            if (buttonElement) {
+              buttonElement.click();
+            }
           }, 1000);
-          console.log('run code');
-        }, );
-
+        }
         return (
           <>
-            <p>Current time: {time}</p>
+            <button onClick={increaseCount} ref={buttonRef}>Clicked {count} {count === 1 ? 'time' : 'times'}</button>
+            <button onClick={reSet}>Reset</button>
+            <button onClick={autoClick}>Auto Click</button>
           </>
         );
       }
