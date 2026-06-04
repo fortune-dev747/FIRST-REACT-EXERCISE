@@ -7,6 +7,14 @@
         font-family: Arial, sans-serif;
       }
       /* Exercise 4a */
+      /* .on-button {
+        background-color: rgb(23, 135, 84);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+      } */
+      /* Exercise 4b */
       .on-button {
         background-color: rgb(23, 135, 84);
         color: white;
@@ -29,13 +37,34 @@
     <script type="text/babel">
       
       // Exercise 4a
+      // function App() {
+      //   return (
+      //     <>
+      //       <button className="on-button">ON</button>
+      //     </>
+      //   );
+      // }
+
+      // Exercise 4b
       function App() {
+        const [isButtonOn, setIsButtonOn] = React.useState(true);
+
+        function switchButton() {
+          if (isButtonOn) {
+            setIsButtonOn(false);
+          } else {
+            setIsButtonOn(true);
+          }
+        }
+
         return (
           <>
-            <button className="on-button">ON</button>
+            <button onClick={switchButton} className="on-button">ON</button>
+            {isButtonOn ? 'ON' : 'OFF'}
           </>
         );
       }
+
 
       const container = document.querySelector('.js-container');
       ReactDOM.createRoot(container).render(<App />);
